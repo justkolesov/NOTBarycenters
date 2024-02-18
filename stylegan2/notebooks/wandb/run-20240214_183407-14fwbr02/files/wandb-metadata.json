@@ -1,0 +1,21 @@
+{
+    "os": "Linux-5.4.265-1.el7.elrepo.x86_64-x86_64-with-glibc2.10",
+    "python": "3.8.5",
+    "heartbeatAt": "2024-02-14T15:34:08.885128",
+    "startedAt": "2024-02-14T15:34:07.821386",
+    "docker": null,
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "gpu_count": 1,
+    "cpu_count": 128,
+    "cuda": "10.2.89",
+    "args": [
+        "-f",
+        "/trinity/home/a.kolesov/.local/share/jupyter/runtime/kernel-6518d242-708b-4714-b597-0c784cb6dedd.json"
+    ],
+    "state": "running",
+    "program": "NOTBarycenters/stylegan2/notebooks/AVE_CELEBA_L2.ipynb",
+    "root": "/trinity/home/a.kolesov",
+    "host": "gn30.zhores",
+    "username": "a.kolesov",
+    "executable": "/opt/anaconda3/bin/python"
+}

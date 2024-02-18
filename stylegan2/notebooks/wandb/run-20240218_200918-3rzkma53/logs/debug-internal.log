@@ -1,0 +1,96 @@
+2024-02-18 20:09:19,180 INFO    MainThread:3666265 [internal.py:wandb_internal():88] W&B internal server running at pid: 3666265, started at: 2024-02-18 20:09:19.179511
+2024-02-18 20:09:19,182 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: check_version
+2024-02-18 20:09:19,182 INFO    WriterThread:3666265 [datastore.py:open_for_write():80] open: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/run-3rzkma53.wandb
+2024-02-18 20:09:19,185 DEBUG   SenderThread:3666265 [sender.py:send():179] send: header
+2024-02-18 20:09:19,185 DEBUG   SenderThread:3666265 [sender.py:send_request():193] send_request: check_version
+2024-02-18 20:09:19,297 DEBUG   SenderThread:3666265 [sender.py:send():179] send: run
+2024-02-18 20:09:19,306 DEBUG   SenderThread:3666265 [git.py:repo():33] git repository is invalid
+2024-02-18 20:09:19,589 INFO    SenderThread:3666265 [dir_watcher.py:__init__():168] watching files in: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files
+2024-02-18 20:09:19,589 INFO    SenderThread:3666265 [sender.py:_start_run_threads():716] run started: 3rzkma53 with start time 1708276158
+2024-02-18 20:09:19,590 DEBUG   SenderThread:3666265 [sender.py:send():179] send: summary
+2024-02-18 20:09:19,590 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: run_start
+2024-02-18 20:09:19,591 INFO    SenderThread:3666265 [sender.py:_save_file():841] saving file wandb-summary.json with policy end
+2024-02-18 20:09:19,606 DEBUG   HandlerThread:3666265 [meta.py:__init__():39] meta init
+2024-02-18 20:09:19,607 DEBUG   HandlerThread:3666265 [meta.py:__init__():53] meta init done
+2024-02-18 20:09:19,608 DEBUG   HandlerThread:3666265 [meta.py:probe():210] probe
+2024-02-18 20:09:19,624 DEBUG   HandlerThread:3666265 [git.py:repo():33] git repository is invalid
+2024-02-18 20:09:19,624 DEBUG   HandlerThread:3666265 [meta.py:_save_pip():57] save pip
+2024-02-18 20:09:19,626 DEBUG   HandlerThread:3666265 [meta.py:_save_pip():71] save pip done
+2024-02-18 20:09:19,626 DEBUG   HandlerThread:3666265 [meta.py:_save_conda():78] save conda
+2024-02-18 20:09:20,288 DEBUG   HandlerThread:3666265 [meta.py:_save_conda():86] save conda done
+2024-02-18 20:09:20,288 DEBUG   HandlerThread:3666265 [meta.py:probe():252] probe done
+2024-02-18 20:09:20,317 DEBUG   SenderThread:3666265 [sender.py:send():179] send: files
+2024-02-18 20:09:20,318 INFO    SenderThread:3666265 [sender.py:_save_file():841] saving file wandb-metadata.json with policy now
+2024-02-18 20:09:20,324 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-18 20:09:20,324 DEBUG   SenderThread:3666265 [sender.py:send_request():193] send_request: stop_status
+2024-02-18 20:09:20,330 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: pause
+2024-02-18 20:09:20,330 INFO    HandlerThread:3666265 [handler.py:handle_request_pause():525] stopping system metrics thread
+2024-02-18 20:09:20,364 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: resume
+2024-02-18 20:09:20,364 INFO    HandlerThread:3666265 [handler.py:handle_request_resume():520] starting system metrics thread
+2024-02-18 20:09:20,591 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_created():216] file/dir created: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/wandb-summary.json
+2024-02-18 20:09:20,591 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_created():216] file/dir created: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/requirements.txt
+2024-02-18 20:09:20,592 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_created():216] file/dir created: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/output.log
+2024-02-18 20:09:20,592 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_created():216] file/dir created: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/conda-environment.yaml
+2024-02-18 20:09:20,592 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_created():216] file/dir created: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/wandb-metadata.json
+2024-02-18 20:09:20,595 DEBUG   SenderThread:3666265 [sender.py:send():179] send: stats
+2024-02-18 20:09:20,876 INFO    Thread-11 :3666265 [upload_job.py:push():137] Uploaded file /tmp/tmpmrz8sw1rwandb/19v09lwz-wandb-metadata.json
+2024-02-18 20:09:22,591 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/output.log
+2024-02-18 20:09:24,593 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/output.log
+2024-02-18 20:09:26,595 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/output.log
+2024-02-18 20:09:28,597 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/output.log
+2024-02-18 20:09:30,598 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/output.log
+2024-02-18 20:09:32,600 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/output.log
+2024-02-18 20:09:34,601 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/output.log
+2024-02-18 20:09:35,596 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-18 20:09:35,597 DEBUG   SenderThread:3666265 [sender.py:send_request():193] send_request: stop_status
+2024-02-18 20:09:36,603 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/output.log
+2024-02-18 20:09:38,605 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/output.log
+2024-02-18 20:09:40,607 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/output.log
+2024-02-18 20:09:43,931 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: pause
+2024-02-18 20:09:43,931 INFO    HandlerThread:3666265 [handler.py:handle_request_pause():525] stopping system metrics thread
+2024-02-18 20:09:44,029 DEBUG   SenderThread:3666265 [sender.py:send():179] send: stats
+2024-02-18 20:09:44,611 INFO    Thread-8  :3666265 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240218_200918-3rzkma53/files/output.log
+2024-02-18 20:09:50,876 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-18 20:09:50,876 DEBUG   SenderThread:3666265 [sender.py:send_request():193] send_request: stop_status
+2024-02-18 20:10:06,177 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-18 20:10:06,177 DEBUG   SenderThread:3666265 [sender.py:send_request():193] send_request: stop_status
+2024-02-18 20:10:21,401 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-18 20:10:21,401 DEBUG   SenderThread:3666265 [sender.py:send_request():193] send_request: stop_status
+2024-02-18 20:10:37,824 DEBUG   SenderThread:3666265 [sender.py:send():179] send: files
+2024-02-18 20:10:37,825 INFO    SenderThread:3666265 [sender.py:_save_file():841] saving file media/images/Images_0_285ed140dada80573bc8.png with policy now
+2024-02-18 20:10:37,827 DEBUG   SenderThread:3666265 [sender.py:send():179] send: history
+2024-02-18 20:10:37,828 DEBUG   SenderThread:3666265 [sender.py:send():179] send: summary
+2024-02-18 20:10:37,830 INFO    SenderThread:3666265 [sender.py:_save_file():841] saving file wandb-summary.json with policy end
+2024-02-18 20:10:38,425 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: poll_exit
+2024-02-18 20:10:38,425 DEBUG   SenderThread:3666265 [sender.py:send():179] send: telemetry
+2024-02-18 20:10:38,426 DEBUG   SenderThread:3666265 [sender.py:send():179] send: exit
+2024-02-18 20:10:38,426 INFO    SenderThread:3666265 [sender.py:send_exit():287] handling exit code: 0
+2024-02-18 20:10:38,426 INFO    SenderThread:3666265 [sender.py:send_exit():295] send defer
+2024-02-18 20:10:38,426 DEBUG   SenderThread:3666265 [sender.py:send_request():193] send_request: poll_exit
+2024-02-18 20:10:38,427 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: defer
+2024-02-18 20:10:38,427 INFO    HandlerThread:3666265 [handler.py:handle_request_defer():141] handle defer: 0
+2024-02-18 20:10:38,427 DEBUG   SenderThread:3666265 [sender.py:send_request():193] send_request: defer
+2024-02-18 20:10:38,427 INFO    SenderThread:3666265 [sender.py:send_request_defer():304] handle sender defer: 0
+2024-02-18 20:10:38,428 INFO    SenderThread:3666265 [sender.py:transition_state():308] send defer: 1
+2024-02-18 20:10:38,428 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: defer
+2024-02-18 20:10:38,428 INFO    HandlerThread:3666265 [handler.py:handle_request_defer():141] handle defer: 1
+2024-02-18 20:10:38,428 DEBUG   SenderThread:3666265 [sender.py:send_request():193] send_request: defer
+2024-02-18 20:10:38,428 INFO    SenderThread:3666265 [sender.py:send_request_defer():304] handle sender defer: 1
+2024-02-18 20:10:38,428 INFO    SenderThread:3666265 [sender.py:transition_state():308] send defer: 2
+2024-02-18 20:10:38,429 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: defer
+2024-02-18 20:10:38,429 INFO    HandlerThread:3666265 [handler.py:handle_request_defer():141] handle defer: 2
+2024-02-18 20:10:38,429 DEBUG   SenderThread:3666265 [sender.py:send_request():193] send_request: defer
+2024-02-18 20:10:38,429 INFO    SenderThread:3666265 [sender.py:send_request_defer():304] handle sender defer: 2
+2024-02-18 20:10:38,430 INFO    SenderThread:3666265 [sender.py:transition_state():308] send defer: 3
+2024-02-18 20:10:38,430 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: defer
+2024-02-18 20:10:38,430 INFO    HandlerThread:3666265 [handler.py:handle_request_defer():141] handle defer: 3
+2024-02-18 20:10:38,430 DEBUG   SenderThread:3666265 [sender.py:send():179] send: summary
+2024-02-18 20:10:38,432 INFO    SenderThread:3666265 [sender.py:_save_file():841] saving file wandb-summary.json with policy end
+2024-02-18 20:10:38,432 DEBUG   SenderThread:3666265 [sender.py:send_request():193] send_request: defer
+2024-02-18 20:10:38,432 INFO    SenderThread:3666265 [sender.py:send_request_defer():304] handle sender defer: 3
+2024-02-18 20:10:38,432 INFO    SenderThread:3666265 [sender.py:transition_state():308] send defer: 4
+2024-02-18 20:10:38,432 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: defer
+2024-02-18 20:10:38,433 INFO    HandlerThread:3666265 [handler.py:handle_request_defer():141] handle defer: 4
+2024-02-18 20:10:38,433 DEBUG   SenderThread:3666265 [sender.py:send_request():193] send_request: defer
+2024-02-18 20:10:38,433 INFO    SenderThread:3666265 [sender.py:send_request_defer():304] handle sender defer: 4
+2024-02-18 20:10:38,531 DEBUG   HandlerThread:3666265 [handler.py:handle_request():124] handle_request: poll_exit

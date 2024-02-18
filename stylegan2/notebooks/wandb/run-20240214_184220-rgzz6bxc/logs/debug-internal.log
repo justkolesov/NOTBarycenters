@@ -1,0 +1,179 @@
+2024-02-14 18:42:21,091 INFO    MainThread:2600398 [internal.py:wandb_internal():88] W&B internal server running at pid: 2600398, started at: 2024-02-14 18:42:21.090519
+2024-02-14 18:42:21,092 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: check_version
+2024-02-14 18:42:21,092 INFO    WriterThread:2600398 [datastore.py:open_for_write():80] open: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/run-rgzz6bxc.wandb
+2024-02-14 18:42:21,094 DEBUG   SenderThread:2600398 [sender.py:send():179] send: header
+2024-02-14 18:42:21,094 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: check_version
+2024-02-14 18:42:21,218 DEBUG   SenderThread:2600398 [sender.py:send():179] send: run
+2024-02-14 18:42:21,224 DEBUG   SenderThread:2600398 [git.py:repo():33] git repository is invalid
+2024-02-14 18:42:21,546 INFO    SenderThread:2600398 [dir_watcher.py:__init__():168] watching files in: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files
+2024-02-14 18:42:21,547 INFO    SenderThread:2600398 [sender.py:_start_run_threads():716] run started: rgzz6bxc with start time 1707925340
+2024-02-14 18:42:21,547 DEBUG   SenderThread:2600398 [sender.py:send():179] send: summary
+2024-02-14 18:42:21,547 INFO    SenderThread:2600398 [sender.py:_save_file():841] saving file wandb-summary.json with policy end
+2024-02-14 18:42:21,548 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: run_start
+2024-02-14 18:42:21,564 DEBUG   HandlerThread:2600398 [meta.py:__init__():39] meta init
+2024-02-14 18:42:21,565 DEBUG   HandlerThread:2600398 [meta.py:__init__():53] meta init done
+2024-02-14 18:42:21,565 DEBUG   HandlerThread:2600398 [meta.py:probe():210] probe
+2024-02-14 18:42:21,572 DEBUG   HandlerThread:2600398 [git.py:repo():33] git repository is invalid
+2024-02-14 18:42:21,572 DEBUG   HandlerThread:2600398 [meta.py:_save_pip():57] save pip
+2024-02-14 18:42:21,573 DEBUG   HandlerThread:2600398 [meta.py:_save_pip():71] save pip done
+2024-02-14 18:42:21,573 DEBUG   HandlerThread:2600398 [meta.py:_save_conda():78] save conda
+2024-02-14 18:42:22,191 DEBUG   HandlerThread:2600398 [meta.py:_save_conda():86] save conda done
+2024-02-14 18:42:22,192 DEBUG   HandlerThread:2600398 [meta.py:probe():252] probe done
+2024-02-14 18:42:22,220 DEBUG   SenderThread:2600398 [sender.py:send():179] send: files
+2024-02-14 18:42:22,220 INFO    SenderThread:2600398 [sender.py:_save_file():841] saving file wandb-metadata.json with policy now
+2024-02-14 18:42:22,226 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-14 18:42:22,227 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: stop_status
+2024-02-14 18:42:22,234 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: pause
+2024-02-14 18:42:22,235 INFO    HandlerThread:2600398 [handler.py:handle_request_pause():525] stopping system metrics thread
+2024-02-14 18:42:22,318 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: resume
+2024-02-14 18:42:22,318 INFO    HandlerThread:2600398 [handler.py:handle_request_resume():520] starting system metrics thread
+2024-02-14 18:42:22,482 DEBUG   SenderThread:2600398 [sender.py:send():179] send: stats
+2024-02-14 18:42:22,548 INFO    Thread-8  :2600398 [dir_watcher.py:_on_file_created():216] file/dir created: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/requirements.txt
+2024-02-14 18:42:22,549 INFO    Thread-8  :2600398 [dir_watcher.py:_on_file_created():216] file/dir created: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/wandb-summary.json
+2024-02-14 18:42:22,549 INFO    Thread-8  :2600398 [dir_watcher.py:_on_file_created():216] file/dir created: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/wandb-metadata.json
+2024-02-14 18:42:22,549 INFO    Thread-8  :2600398 [dir_watcher.py:_on_file_created():216] file/dir created: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/conda-environment.yaml
+2024-02-14 18:42:22,550 INFO    Thread-8  :2600398 [dir_watcher.py:_on_file_created():216] file/dir created: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/output.log
+2024-02-14 18:42:22,782 INFO    Thread-11 :2600398 [upload_job.py:push():137] Uploaded file /tmp/tmp7a87gd6fwandb/229k3ge8-wandb-metadata.json
+2024-02-14 18:42:24,549 INFO    Thread-8  :2600398 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/output.log
+2024-02-14 18:42:26,551 INFO    Thread-8  :2600398 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/output.log
+2024-02-14 18:42:28,553 INFO    Thread-8  :2600398 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/output.log
+2024-02-14 18:42:30,556 INFO    Thread-8  :2600398 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/output.log
+2024-02-14 18:42:32,263 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: pause
+2024-02-14 18:42:32,263 INFO    HandlerThread:2600398 [handler.py:handle_request_pause():525] stopping system metrics thread
+2024-02-14 18:42:32,336 DEBUG   SenderThread:2600398 [sender.py:send():179] send: stats
+2024-02-14 18:42:32,558 INFO    Thread-8  :2600398 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/output.log
+2024-02-14 18:42:37,483 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-14 18:42:37,484 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: stop_status
+2024-02-14 18:42:52,779 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-14 18:42:52,780 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: stop_status
+2024-02-14 18:43:08,034 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-14 18:43:08,034 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: stop_status
+2024-02-14 18:43:23,345 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-14 18:43:23,346 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: stop_status
+2024-02-14 18:43:38,616 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-14 18:43:38,616 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: stop_status
+2024-02-14 18:43:53,878 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-14 18:43:53,879 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: stop_status
+2024-02-14 18:44:09,180 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-14 18:44:09,180 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: stop_status
+2024-02-14 18:44:24,404 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-14 18:44:24,404 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: stop_status
+2024-02-14 18:44:39,753 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: stop_status
+2024-02-14 18:44:39,753 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: stop_status
+2024-02-14 18:44:45,732 DEBUG   SenderThread:2600398 [sender.py:send():179] send: files
+2024-02-14 18:44:45,733 INFO    SenderThread:2600398 [sender.py:_save_file():841] saving file media/images/Barycenter Images unfixed of distributions_0_50869bcdac1d6f369879.png with policy now
+2024-02-14 18:44:45,735 DEBUG   SenderThread:2600398 [sender.py:send():179] send: history
+2024-02-14 18:44:45,735 DEBUG   SenderThread:2600398 [sender.py:send():179] send: summary
+2024-02-14 18:44:45,737 INFO    SenderThread:2600398 [sender.py:_save_file():841] saving file wandb-summary.json with policy end
+2024-02-14 18:44:45,899 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: poll_exit
+2024-02-14 18:44:45,900 DEBUG   SenderThread:2600398 [sender.py:send():179] send: telemetry
+2024-02-14 18:44:45,900 DEBUG   SenderThread:2600398 [sender.py:send():179] send: exit
+2024-02-14 18:44:45,900 INFO    SenderThread:2600398 [sender.py:send_exit():287] handling exit code: 0
+2024-02-14 18:44:45,900 INFO    SenderThread:2600398 [sender.py:send_exit():295] send defer
+2024-02-14 18:44:45,901 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: poll_exit
+2024-02-14 18:44:45,901 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: defer
+2024-02-14 18:44:45,901 INFO    HandlerThread:2600398 [handler.py:handle_request_defer():141] handle defer: 0
+2024-02-14 18:44:45,901 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: defer
+2024-02-14 18:44:45,901 INFO    SenderThread:2600398 [sender.py:send_request_defer():304] handle sender defer: 0
+2024-02-14 18:44:45,902 INFO    SenderThread:2600398 [sender.py:transition_state():308] send defer: 1
+2024-02-14 18:44:45,902 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: defer
+2024-02-14 18:44:45,902 INFO    HandlerThread:2600398 [handler.py:handle_request_defer():141] handle defer: 1
+2024-02-14 18:44:45,902 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: defer
+2024-02-14 18:44:45,902 INFO    SenderThread:2600398 [sender.py:send_request_defer():304] handle sender defer: 1
+2024-02-14 18:44:45,903 INFO    SenderThread:2600398 [sender.py:transition_state():308] send defer: 2
+2024-02-14 18:44:45,903 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: defer
+2024-02-14 18:44:45,903 INFO    HandlerThread:2600398 [handler.py:handle_request_defer():141] handle defer: 2
+2024-02-14 18:44:45,903 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: defer
+2024-02-14 18:44:45,903 INFO    SenderThread:2600398 [sender.py:send_request_defer():304] handle sender defer: 2
+2024-02-14 18:44:45,903 INFO    SenderThread:2600398 [sender.py:transition_state():308] send defer: 3
+2024-02-14 18:44:45,904 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: defer
+2024-02-14 18:44:45,904 INFO    HandlerThread:2600398 [handler.py:handle_request_defer():141] handle defer: 3
+2024-02-14 18:44:45,904 DEBUG   SenderThread:2600398 [sender.py:send():179] send: summary
+2024-02-14 18:44:45,905 INFO    SenderThread:2600398 [sender.py:_save_file():841] saving file wandb-summary.json with policy end
+2024-02-14 18:44:45,905 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: defer
+2024-02-14 18:44:45,905 INFO    SenderThread:2600398 [sender.py:send_request_defer():304] handle sender defer: 3
+2024-02-14 18:44:45,905 INFO    SenderThread:2600398 [sender.py:transition_state():308] send defer: 4
+2024-02-14 18:44:45,906 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: defer
+2024-02-14 18:44:45,906 INFO    HandlerThread:2600398 [handler.py:handle_request_defer():141] handle defer: 4
+2024-02-14 18:44:45,906 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: defer
+2024-02-14 18:44:45,906 INFO    SenderThread:2600398 [sender.py:send_request_defer():304] handle sender defer: 4
+2024-02-14 18:44:46,005 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: poll_exit
+2024-02-14 18:44:46,133 INFO    SenderThread:2600398 [sender.py:transition_state():308] send defer: 5
+2024-02-14 18:44:46,134 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: poll_exit
+2024-02-14 18:44:46,134 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: defer
+2024-02-14 18:44:46,134 INFO    HandlerThread:2600398 [handler.py:handle_request_defer():141] handle defer: 5
+2024-02-14 18:44:46,134 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: defer
+2024-02-14 18:44:46,134 INFO    SenderThread:2600398 [sender.py:send_request_defer():304] handle sender defer: 5
+2024-02-14 18:44:46,134 INFO    SenderThread:2600398 [dir_watcher.py:finish():282] shutting down directory watcher
+2024-02-14 18:44:46,235 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: poll_exit
+2024-02-14 18:44:46,569 INFO    SenderThread:2600398 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/wandb-summary.json
+2024-02-14 18:44:46,569 INFO    SenderThread:2600398 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/config.yaml
+2024-02-14 18:44:46,569 INFO    SenderThread:2600398 [dir_watcher.py:_on_file_modified():229] file/dir modified: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/output.log
+2024-02-14 18:44:46,569 INFO    SenderThread:2600398 [dir_watcher.py:_on_file_created():216] file/dir created: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/media/images/Barycenter Images unfixed of distributions_0_50869bcdac1d6f369879.png
+2024-02-14 18:44:46,570 INFO    SenderThread:2600398 [dir_watcher.py:_on_file_created():216] file/dir created: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/media/images
+2024-02-14 18:44:46,570 INFO    SenderThread:2600398 [dir_watcher.py:_on_file_created():216] file/dir created: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/media
+2024-02-14 18:44:46,570 INFO    SenderThread:2600398 [dir_watcher.py:finish():312] scan: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files
+2024-02-14 18:44:46,570 INFO    SenderThread:2600398 [dir_watcher.py:finish():318] scan save: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/wandb-metadata.json wandb-metadata.json
+2024-02-14 18:44:46,570 INFO    SenderThread:2600398 [dir_watcher.py:finish():318] scan save: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/output.log output.log
+2024-02-14 18:44:46,571 INFO    SenderThread:2600398 [dir_watcher.py:finish():318] scan save: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/requirements.txt requirements.txt
+2024-02-14 18:44:46,573 INFO    SenderThread:2600398 [dir_watcher.py:finish():318] scan save: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/config.yaml config.yaml
+2024-02-14 18:44:46,576 INFO    SenderThread:2600398 [dir_watcher.py:finish():318] scan save: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/conda-environment.yaml conda-environment.yaml
+2024-02-14 18:44:46,578 INFO    SenderThread:2600398 [dir_watcher.py:finish():318] scan save: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/wandb-summary.json wandb-summary.json
+2024-02-14 18:44:46,581 INFO    SenderThread:2600398 [dir_watcher.py:finish():318] scan save: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/media/images/Barycenter Images unfixed of distributions_0_50869bcdac1d6f369879.png media/images/Barycenter Images unfixed of distributions_0_50869bcdac1d6f369879.png
+2024-02-14 18:44:46,581 INFO    SenderThread:2600398 [sender.py:transition_state():308] send defer: 6
+2024-02-14 18:44:46,581 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: poll_exit
+2024-02-14 18:44:46,582 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: defer
+2024-02-14 18:44:46,582 INFO    HandlerThread:2600398 [handler.py:handle_request_defer():141] handle defer: 6
+2024-02-14 18:44:46,582 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: defer
+2024-02-14 18:44:46,582 INFO    SenderThread:2600398 [sender.py:send_request_defer():304] handle sender defer: 6
+2024-02-14 18:44:46,582 INFO    SenderThread:2600398 [file_pusher.py:finish():177] shutting down file pusher
+2024-02-14 18:44:46,683 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: poll_exit
+2024-02-14 18:44:46,683 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: poll_exit
+2024-02-14 18:44:46,785 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: poll_exit
+2024-02-14 18:44:46,785 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: poll_exit
+2024-02-14 18:44:46,887 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: poll_exit
+2024-02-14 18:44:46,889 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: poll_exit
+2024-02-14 18:44:46,991 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: poll_exit
+2024-02-14 18:44:46,991 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: poll_exit
+2024-02-14 18:44:47,083 INFO    Thread-13 :2600398 [upload_job.py:push():137] Uploaded file /tmp/tmp7a87gd6fwandb/lx16be01-media/images/Barycenter Images unfixed of distributions_0_50869bcdac1d6f369879.png
+2024-02-14 18:44:47,093 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: poll_exit
+2024-02-14 18:44:47,093 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: poll_exit
+2024-02-14 18:44:47,159 INFO    Thread-16 :2600398 [upload_job.py:push():137] Uploaded file /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/config.yaml
+2024-02-14 18:44:47,170 INFO    Thread-14 :2600398 [upload_job.py:push():137] Uploaded file /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/output.log
+2024-02-14 18:44:47,180 INFO    Thread-15 :2600398 [upload_job.py:push():137] Uploaded file /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/requirements.txt
+2024-02-14 18:44:47,194 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: poll_exit
+2024-02-14 18:44:47,194 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: poll_exit
+2024-02-14 18:44:47,196 INFO    Thread-17 :2600398 [upload_job.py:push():137] Uploaded file /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/files/wandb-summary.json
+2024-02-14 18:44:47,296 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: poll_exit
+2024-02-14 18:44:47,297 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: poll_exit
+2024-02-14 18:44:47,396 INFO    Thread-7  :2600398 [sender.py:transition_state():308] send defer: 7
+2024-02-14 18:44:47,397 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: defer
+2024-02-14 18:44:47,398 INFO    HandlerThread:2600398 [handler.py:handle_request_defer():141] handle defer: 7
+2024-02-14 18:44:47,398 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: poll_exit
+2024-02-14 18:44:47,398 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: defer
+2024-02-14 18:44:47,399 INFO    SenderThread:2600398 [sender.py:send_request_defer():304] handle sender defer: 7
+2024-02-14 18:44:47,795 INFO    SenderThread:2600398 [sender.py:transition_state():308] send defer: 8
+2024-02-14 18:44:47,795 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: poll_exit
+2024-02-14 18:44:47,795 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: defer
+2024-02-14 18:44:47,796 INFO    HandlerThread:2600398 [handler.py:handle_request_defer():141] handle defer: 8
+2024-02-14 18:44:47,796 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: defer
+2024-02-14 18:44:47,796 INFO    SenderThread:2600398 [sender.py:send_request_defer():304] handle sender defer: 8
+2024-02-14 18:44:47,796 INFO    SenderThread:2600398 [sender.py:transition_state():308] send defer: 9
+2024-02-14 18:44:47,796 DEBUG   SenderThread:2600398 [sender.py:send():179] send: final
+2024-02-14 18:44:47,797 DEBUG   SenderThread:2600398 [sender.py:send():179] send: footer
+2024-02-14 18:44:47,797 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: defer
+2024-02-14 18:44:47,797 INFO    HandlerThread:2600398 [handler.py:handle_request_defer():141] handle defer: 9
+2024-02-14 18:44:47,797 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: defer
+2024-02-14 18:44:47,798 INFO    SenderThread:2600398 [sender.py:send_request_defer():304] handle sender defer: 9
+2024-02-14 18:44:47,896 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: poll_exit
+2024-02-14 18:44:47,897 DEBUG   SenderThread:2600398 [sender.py:send_request():193] send_request: poll_exit
+2024-02-14 18:44:47,897 INFO    SenderThread:2600398 [file_pusher.py:join():182] waiting for file pusher
+2024-02-14 18:44:47,898 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: get_summary
+2024-02-14 18:44:47,899 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: sampled_history
+2024-02-14 18:44:47,899 DEBUG   HandlerThread:2600398 [handler.py:handle_request():124] handle_request: shutdown
+2024-02-14 18:44:47,899 INFO    HandlerThread:2600398 [handler.py:finish():638] shutting down handler
+2024-02-14 18:44:48,797 INFO    WriterThread:2600398 [datastore.py:close():288] close: /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240214_184220-rgzz6bxc/run-rgzz6bxc.wandb
+2024-02-14 18:44:48,897 INFO    SenderThread:2600398 [sender.py:finish():945] shutting down sender
+2024-02-14 18:44:48,897 INFO    SenderThread:2600398 [file_pusher.py:finish():177] shutting down file pusher
+2024-02-14 18:44:48,897 INFO    SenderThread:2600398 [file_pusher.py:join():182] waiting for file pusher
+2024-02-14 18:44:48,899 INFO    MainThread:2600398 [internal.py:handle_exit():78] Internal process exited
