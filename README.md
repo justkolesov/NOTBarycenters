@@ -3,7 +3,7 @@ This is the official `Python` implementation of the paper **Estimating Barycente
 
 
 <p  align="center">
-  <img src= "pics/bary.png" width="350" /> 
+  <img src= "pics/bary.jpg" width="350" /> 
 </p>
 
 
