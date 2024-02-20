@@ -33,7 +33,7 @@ All the experiments are issued in the form of pretty self-explanatory jupyter no
 - `notebooks/AVE_CELEBA_KERNEL_GAUSS.ipynb` -- estimating barycenters in latent space with $\gamma$-Energy cost(Gaussian reparam.);
 
 <p  align="center">
-  <img src= "pics/ave_0.png" width="250" />
+  <img src= "pics/ave_0.png" width="260" />
   <img src="pics/ave_1.png" width="230" />  
   <img src="pics/ave_2.png" width="230" /> 
 </p>
@@ -43,8 +43,8 @@ All the experiments are issued in the form of pretty self-explanatory jupyter no
 - `notebooks/SHAPE_COLOR_EXPERIMENT_ENTROPIC.ipynb` -- estimating barycenters in latent space with $\epsilon$-KL cost;
 
 <p  align="center">
-  <img src= "pics/shape_shape_1.png" width="350" />
-  <img src="pics/cifar/color_color_1.png" width="350" /> 
+  <img src= "pics/shape_shape_1.png" width="340" />
+  <img src="pics/color_color_1.png" width="340" /> 
 </p>
 
 
