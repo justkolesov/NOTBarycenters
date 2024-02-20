@@ -4,7 +4,7 @@ This is the official `Python` implementation of the paper **Estimating Barycente
 
 
 ## Pre-requisites
-The implementation is GPU-based. Single GPU GTX 1080 ti is enough to run each particular experiment. We tested the code with `torch==2.1.1+cu121`. The code might not run as intended in older/newer `torch` versions. Versions of other libraries are specified in `requirements.txt`.
+The implementation is GPU-based. Single GPU GTX 1080 ti is enough to run each particular experiment. We tested the code with `torch==2.1.1+cu121`. The code might not run as intended in older/newer `torch` versions. Versions of other libraries are specified in `requirements.txt`. Pre-trained models for maps and potentials are located [here](https://disk.yandex.ru/client/disk/NOTBarycenters).
 
  
 ## Repository structure
@@ -55,7 +55,7 @@ All the experiments are issued in the form of pretty self-explanatory jupyter no
 - Set downloaded dataset in appropriate subfolder in `data/`.
 - If you run experiment in Image space, download appropriate [StyleGan2](https://github.com/NVlabs/stylegan2-ada-pytorch) model from [here](https://disk.yandex.ru/client/disk/NOTBarycenters)(folder `StyleGan2/`).
 - Set StyleGan2 model in appropriate subfolder in `SG2_ckpt/`.
-- Run notebook.
+- Run notebook for training or take appropriate checkpoint from [here](https://disk.yandex.ru/client/disk/NOTBarycenters).
 
 ## Credits
 
