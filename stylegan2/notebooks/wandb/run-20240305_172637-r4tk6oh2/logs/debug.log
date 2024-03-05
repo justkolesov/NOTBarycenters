@@ -1,0 +1,66 @@
+2024-03-05 17:26:37,669 INFO    MainThread:3693234 [wandb_setup.py:_flush():69] setting env: {}
+2024-03-05 17:26:37,670 INFO    MainThread:3693234 [wandb_setup.py:_flush():69] setting login settings: {}
+2024-03-05 17:26:37,670 INFO    MainThread:3693234 [wandb_init.py:_log_setup():337] Logging user logs to /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240305_172637-r4tk6oh2/logs/debug.log
+2024-03-05 17:26:37,671 INFO    MainThread:3693234 [wandb_init.py:_log_setup():338] Logging internal logs to /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240305_172637-r4tk6oh2/logs/debug-internal.log
+2024-03-05 17:26:37,671 INFO    MainThread:3693234 [wandb_init.py:init():370] calling init triggers
+2024-03-05 17:26:37,672 INFO    MainThread:3693234 [wandb_init.py:init():375] wandb.init called with sweep_config: {}
+config: {'CASE': 'Gaussians', 'BATCH_SIZE': 1000}
+2024-03-05 17:26:37,672 INFO    MainThread:3693234 [wandb_init.py:init():419] starting backend
+2024-03-05 17:26:37,672 INFO    MainThread:3693234 [backend.py:_multiprocessing_setup():70] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-03-05 17:26:37,675 INFO    MainThread:3693234 [backend.py:ensure_launched():135] starting backend process...
+2024-03-05 17:26:37,681 INFO    MainThread:3693234 [backend.py:ensure_launched():139] started backend process with pid: 3693451
+2024-03-05 17:26:37,682 INFO    MainThread:3693234 [wandb_init.py:init():424] backend started and connected
+2024-03-05 17:26:37,696 INFO    MainThread:3693234 [wandb_run.py:_label_probe_notebook():844] probe notebook
+2024-03-05 17:26:37,696 INFO    MainThread:3693234 [wandb_run.py:_label_probe_notebook():851] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2024-03-05 17:26:37,697 INFO    MainThread:3693234 [wandb_init.py:init():472] updated telemetry
+2024-03-05 17:26:37,700 INFO    MainThread:3693234 [wandb_init.py:init():491] communicating current version
+2024-03-05 17:26:38,577 INFO    MainThread:3693234 [wandb_init.py:init():496] got version response upgrade_message: "wandb version 0.16.3 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-03-05 17:26:38,578 INFO    MainThread:3693234 [wandb_init.py:init():504] communicating run to backend with 30 second timeout
+2024-03-05 17:27:08,580 INFO    MainThread:3693234 [interface.py:_communicate_run():657] couldn't get run from backend
+2024-03-05 17:27:08,581 ERROR   MainThread:3693234 [wandb_init.py:init():508] backend process timed out
+2024-03-05 17:27:08,581 ERROR   MainThread:3693234 [wandb_init.py:init():517] encountered error: Error communicating with wandb process
+try: wandb.init(settings=wandb.Settings(start_method='fork'))
+or:  wandb.init(settings=wandb.Settings(start_method='thread'))
+For more info see: https://docs.wandb.ai/library/init#init-start-error
+2024-03-05 17:27:08,584 ERROR   MainThread:3693234 [wandb_init.py:init():787] error
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 761, in init
+    run = wi.init()
+  File "/opt/anaconda3/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 520, in init
+    backend.cleanup()
+  File "/opt/anaconda3/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 167, in cleanup
+    self.interface.join()
+  File "/opt/anaconda3/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 836, in join
+    _ = self._communicate(record)
+  File "/opt/anaconda3/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 545, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/opt/anaconda3/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 550, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+2024-03-05 17:28:04,941 INFO    MainThread:3693234 [wandb_settings.py:_apply_source_login():716] setting login settings: {}
+2024-03-05 17:28:04,952 INFO    MainThread:3693234 [wandb_setup.py:_flush():69] setting env: {}
+2024-03-05 17:28:04,953 INFO    MainThread:3693234 [wandb_setup.py:_flush():69] setting login settings: {}
+2024-03-05 17:28:04,953 INFO    MainThread:3693234 [wandb_init.py:_log_setup():337] Logging user logs to /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240305_172804-2aq9s3x8/logs/debug.log
+2024-03-05 17:28:04,954 INFO    MainThread:3693234 [wandb_init.py:_log_setup():338] Logging internal logs to /trinity/home/a.kolesov/NOTBarycenters/stylegan2/notebooks/wandb/run-20240305_172804-2aq9s3x8/logs/debug-internal.log
+2024-03-05 17:28:04,955 INFO    MainThread:3693234 [wandb_init.py:init():370] calling init triggers
+2024-03-05 17:28:04,955 INFO    MainThread:3693234 [wandb_init.py:init():375] wandb.init called with sweep_config: {}
+config: {'CASE': 'Gaussians', 'BATCH_SIZE': 1000}
+2024-03-05 17:28:04,956 INFO    MainThread:3693234 [wandb_init.py:init():419] starting backend
+2024-03-05 17:28:04,956 INFO    MainThread:3693234 [backend.py:_multiprocessing_setup():70] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-03-05 17:28:04,959 INFO    MainThread:3693234 [backend.py:ensure_launched():135] starting backend process...
+2024-03-05 17:28:04,965 INFO    MainThread:3693234 [backend.py:ensure_launched():139] started backend process with pid: 3693684
+2024-03-05 17:28:04,966 INFO    MainThread:3693234 [wandb_init.py:init():424] backend started and connected
+2024-03-05 17:28:04,980 INFO    MainThread:3693234 [wandb_run.py:_label_probe_notebook():844] probe notebook
+2024-03-05 17:28:04,980 INFO    MainThread:3693234 [wandb_run.py:_label_probe_notebook():851] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2024-03-05 17:28:04,981 INFO    MainThread:3693234 [wandb_init.py:init():472] updated telemetry
+2024-03-05 17:28:04,982 INFO    MainThread:3693234 [wandb_init.py:init():491] communicating current version
+2024-03-05 17:28:05,854 INFO    MainThread:3693234 [wandb_init.py:init():496] got version response upgrade_message: "wandb version 0.16.3 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-03-05 17:28:05,855 INFO    MainThread:3693234 [wandb_init.py:init():504] communicating run to backend with 30 second timeout
+2024-03-05 17:28:06,311 INFO    MainThread:3693234 [wandb_init.py:init():529] starting run threads in backend
+2024-03-05 17:28:07,380 INFO    MainThread:3693234 [wandb_run.py:_console_start():1623] atexit reg
+2024-03-05 17:28:07,381 INFO    MainThread:3693234 [wandb_run.py:_redirect():1497] redirect: SettingsConsole.WRAP
+2024-03-05 17:28:07,382 INFO    MainThread:3693234 [wandb_run.py:_redirect():1534] Wrapping output streams.
+2024-03-05 17:28:07,383 INFO    MainThread:3693234 [wandb_run.py:_redirect():1558] Redirects installed.
+2024-03-05 17:28:07,383 INFO    MainThread:3693234 [wandb_init.py:init():554] run started, returning control to user process

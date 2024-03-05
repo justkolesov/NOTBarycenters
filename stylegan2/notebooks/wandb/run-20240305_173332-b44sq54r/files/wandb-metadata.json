@@ -1,0 +1,26 @@
+{
+    "os": "Linux-5.4.265-1.el7.elrepo.x86_64-x86_64-with-glibc2.10",
+    "python": "3.8.5",
+    "heartbeatAt": "2024-03-05T14:33:34.190569",
+    "startedAt": "2024-03-05T14:33:32.891884",
+    "docker": null,
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "gpu_count": 1,
+    "cpu_count": 128,
+    "cuda": "10.2.89",
+    "args": [
+        "-f",
+        "/trinity/home/a.kolesov/.local/share/jupyter/runtime/kernel-36d9b914-4610-4bec-af12-2bd0004df06a.json"
+    ],
+    "state": "running",
+    "program": "NOTBarycenters/stylegan2/notebooks/Gauss2D.ipynb",
+    "root": "/trinity/home/a.kolesov/NOTBarycenters",
+    "git": {
+        "remote": "https://github.com/justkolesov/NOTBarycenters.git",
+        "commit": "744c5c2953f2d2e6ce01c9a47d484f95fa963440"
+    },
+    "email": null,
+    "host": "gn30.zhores",
+    "username": "a.kolesov",
+    "executable": "/opt/anaconda3/bin/python"
+}
