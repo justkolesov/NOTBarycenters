@@ -67,11 +67,11 @@ pip install -r requirements.txt
 
 - Set downloaded dataset in appropriate subfolder in `data/`.
 
-- If you run High-dimensional Image experiment, download appropriate [StyleGan2](https://github.com/NVlabs/stylegan2-ada-pytorch) model from [here](https://disk.yandex.ru/client/disk/NOTBarycenters)(folder `StyleGan2/`).
+- If you run High-dimensional Image experiment, download appropriate [StyleGan2](https://github.com/NVlabs/stylegan2-ada-pytorch) model from [here](https://disk.yandex.ru/d/GAhMTWmB4KEVmA) (folder `StyleGan2/`).
 
 - Set downloaded StyleGan2 model in appropriate subfolder in `SG2_ckpt/`.
 
-- Run notebook for training or take appropriate checkpoint from [here](https://disk.yandex.ru/client/disk/NOTBarycenters) and upload them.
+- Run notebook for training or take appropriate checkpoint from [here](https://disk.yandex.ru/d/GAhMTWmB4KEVmA) and upload them.
 
 ## Credits
 
