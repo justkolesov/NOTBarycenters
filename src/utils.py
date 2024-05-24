@@ -9,6 +9,7 @@ import numpy as np
 import wandb
 import gc
 import PIL
+from PIL import Image
 
 def fig2img ( fig ):
     buf = fig2data ( fig )

@@ -2,8 +2,9 @@
 
 This is the official `Python` implementation of the paper **Estimating Barycenters of Distributions with Neural Optimal Transport** (paper on [Arxiv](https://arxiv.org/abs/2402.03828)) by [Alexander Kolesov](https://scholar.google.com/citations?user=vX2pmScAAAAJ&hl=ru&oi=ao), [Petr Mokrov](https://scholar.google.com/citations?user=CRsi4IkAAAAJ&hl=ru&oi=sra), [Igor Udovichenko](https://scholar.google.com/citations?hl=ru&user=IkcYVhXfeQcC), [Milena Gazdieva](https://scholar.google.com/citations?user=h52_Zx8AAAAJ&hl=ru&oi=sra), [Gudmund Pammer](https://scholar.google.com/citations?user=ipItetYAAAAJ&hl=ru&oi=sra), [Evgeny Burnaev](https://scholar.google.ru/citations?user=pCRdcOwAAAAJ&hl=ru) and [Alexander Korotin](https://scholar.google.com/citations?user=1rIIvjAAAAAJ&hl=ru&oi=sra).
 
-<p align="center"><img src="pics/maxminbary_teaser.png" width="800" /></p>
-
+<p  align="center">
+  <img src= "pics/maxminbary_teaser.png" width="700" />
+</p>
 
 ## Pre-requisites
 The implementation is GPU-based. Single GPU GTX 1080 ti is enough to run each particular experiment. We tested the code with `torch==2.1.1+cu121`. The code might not run as intended in older/newer `torch` versions. Versions of other libraries are specified in `requirements.txt`. Pre-trained models for maps and potentials are located [here](https://disk.yandex.ru/client/disk/NOTBarycenters).
@@ -53,11 +54,24 @@ All the experiments are issued in the form of pretty self-explanatory jupyter no
 ## How to Use
 
 - Download the repository.
+
+```console
+git clone https://github.com/justkolesov/NOTBarycenters.git
+```
+- Create virtual environment 
+
+```console
+pip install -r requirements.txt
+```
 - Download either [MNIST](https://yann.lecun.com/exdb/mnist) or [Ave, Celeba!](https://disk.yandex.ru/d/3jdMxB789v936Q) 64x64 dataset.
+
 - Set downloaded dataset in appropriate subfolder in `data/`.
-- If you run experiment in Image space, download appropriate [StyleGan2](https://github.com/NVlabs/stylegan2-ada-pytorch) model from [here](https://disk.yandex.ru/client/disk/NOTBarycenters)(folder `StyleGan2/`).
-- Set StyleGan2 model in appropriate subfolder in `SG2_ckpt/`.
-- Run notebook for training or take appropriate checkpoint from [here](https://disk.yandex.ru/client/disk/NOTBarycenters).
+
+- If you run High-dimensional Image experiment, download appropriate [StyleGan2](https://github.com/NVlabs/stylegan2-ada-pytorch) model from [here](https://disk.yandex.ru/d/GAhMTWmB4KEVmA) (folder `StyleGan2/`).
+
+- Set downloaded StyleGan2 model in appropriate subfolder in `SG2_ckpt/`.
+
+- Run notebook for training or take appropriate checkpoint from [here](https://disk.yandex.ru/d/GAhMTWmB4KEVmA) and upload them.
 
 ## Credits
 
