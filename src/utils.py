@@ -72,7 +72,14 @@ def clean_resources(*tsrs):
     
 #--------------------------------------#    
 def make_f_pot(idx, nets, config):
-    
+
+    def f_pot_two_distribs(x):
+        assert idx in [0, 1]
+        lam1, lam2 = tuple(config.LAMBDAS)
+        if idx == 0:
+            return nets[0](x)
+        return - lam1 * nets[0](x) / lam2
+        
     def f_pot(x):
         res = 0.0
         for i, (net, lmbd) in enumerate(zip(nets, config.LAMBDAS)):
@@ -82,7 +89,10 @@ def make_f_pot(idx, nets, config):
             else:
                 res -= lmbd * net(x) / (config.K - 1) / config.LAMBDAS[idx]
         return res
-    
+
+    assert config.K > 1
+    if config.K == 2:
+        return f_pot_two_distribs
     return f_pot
 
 def pot(idx, nets_for_pot):

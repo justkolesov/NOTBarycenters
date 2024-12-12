@@ -8,6 +8,7 @@ import sys
  
 from src.utils import freeze, unfreeze, make_f_pot, normalize_out_to_0_1, pot
 from src.fid_score import get_Z_mmd_pushed_loader_stats, calculate_frechet_distance
+from src.cost import kernel_reg
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -613,6 +614,307 @@ def train_kernel(nets_for_pot,
                             ax[idx[0],j].imshow(maps[k][:8][j][0].permute(1,2,0).detach().cpu(),
                                                cmap = 'gray' if config.DATASET == 'mnist' else None)
                             ax[idx[1],j].imshow(maps[k][:8][j][1].permute(1,2,0).detach().cpu(),
+                                               cmap = 'gray' if config.DATASET == 'mnist' else None)
+                            
+                fig.tight_layout(pad=0.01)
+                wandb.log({f"Images":fig},step=epoch)
+                plt.show()
+
+
+def train_kernel_data(nets_for_pot,
+                maps,
+                nets_for_pot_opt,
+                maps_opt,
+                data_samplers,
+                config):
+    
+    potentials = [make_f_pot(idx, nets_for_pot, config) for idx in range(config.K)]
+    ################################################
+    ################################################
+    
+    for epoch in tqdm(range(config.NUM_EPOCHS)):
+        
+        
+        #====================#
+        #== inner problem ===#
+        #====================#
+        
+        for k in range(config.K):
+            unfreeze(maps[k])
+            if k < len(nets_for_pot):
+                freeze(nets_for_pot[k])
+        
+        for it in range(config.INNER_ITERATIONS):
+            
+             
+            loss_inner = 0 # sum loss for each distribution
+            
+            maps_opt.zero_grad() 
+            data = [data_samplers[k].sample(config.BATCH_SIZE).to(config.DEVICE)
+                    for k in range(config.K)]
+            
+            
+            for k in range(config.K):
+                
+                #######################
+                #== k-th map step ====#
+                #######################
+
+                #####################
+                # mapping X -> T_XZ
+                
+                Z_cond_k = config.Z_STD * torch.randn(data[k].shape[0],
+                                config.RESNET_ENCODER_LATENT,
+                                config.ZC,
+                                config.IMG_SIZE,
+                                config.IMG_SIZE).to(config.DEVICE) #[B,4,1,64,64] 
+                
+                # checking #
+                assert Z_cond_k.requires_grad == False
+                 
+                
+                XZ = torch.cat([ data[k][:,None].repeat(1,config.RESNET_ENCODER_LATENT,1,1,1) #[b,4,3,64,64]
+                    , Z_cond_k], dim=2) # [B,4,4,64,64]
+                
+                # checking #
+                assert XZ.requires_grad == False
+                assert XZ.shape == torch.Size([data[k].shape[0],config.RESNET_ENCODER_LATENT,
+                                              config.ZC +  config.NC,
+                                              config.IMG_SIZE,config.IMG_SIZE])
+                
+                
+                XZ = XZ.flatten(start_dim=0, end_dim=1) # [B*4,4,64,64]
+                 
+                
+                mapped_x_k = normalize_out_to_0_1(maps[k](XZ), config)
+                    #[B*4,3,64,64]
+                # checking #
+                assert mapped_x_k.requires_grad == True
+                assert mapped_x_k.shape == torch.Size([
+                    data[k].shape[0]*config.RESNET_ENCODER_LATENT,
+                    config.NC,
+                    config.IMG_SIZE,
+                    config.IMG_SIZE])
+
+                
+                
+                ########################
+                # cost computation
+                
+                #  x- [B,3,64,64]; mapped_x_k -[B*4,3,64,64]
+                cost_k = 0.5*( 
+                    data[k][:,None].repeat(1,config.RESNET_ENCODER_LATENT,1,1,1).flatten(start_dim=0, end_dim=1) 
+                    -
+                    mapped_x_k 
+                ).flatten(start_dim=1).norm(dim=1,p=2).square().mean(dim=0)
+                
+                # checking #
+                assert cost_k.requires_grad == True
+                assert cost_k.shape == torch.Size([])
+                if it == config.INNER_ITERATIONS - 1:
+                    wandb.log({f"inner_{k}_cost" : cost_k.item()},
+                              step=epoch)
+
+                ######################
+                # potentials cost
+                
+                potential_k = potentials[k](mapped_x_k) # [B*4, 1]
+                # checking #
+                assert potential_k.requires_grad == True
+                assert potential_k.shape == torch.Size([
+                    data[k].shape[0]*config.RESNET_ENCODER_LATENT,
+                    1])
+                
+                potential_k = potential_k.mean()
+                
+                if it == config.INNER_ITERATIONS - 1:
+                    wandb.log({f"inner_{k}_pot" : potential_k.item()},
+                              step=epoch)
+                
+
+                ####################
+                # kernel regularization
+                
+                # mapped_x_k : [B*4, 3, 64, 64]
+
+                kreg = kernel_reg(mapped_x_k.view(
+                    data[k].shape[0],
+                    config.RESNET_ENCODER_LATENT,
+                    config.NC,
+                    config.IMG_SIZE,
+                    config.IMG_SIZE), config)
+              
+                if it == config.INNER_ITERATIONS - 1:
+                    wandb.log({f"inner_{k}_kreg" : kreg.item()},
+                              step=epoch)
+                 
+                    
+                ################
+                # final k-th loss
+
+                ##############
+                # durty solution to work with large gamma
+                _gamma = config.GAMMA
+                # if hasattr(config, 'PROGRESSIVE_GAMMA') and config.PROGRESSIVE_GAMMA and config.GAMMA > 10:
+                #     if epoch < 200:
+                #         _gamma = 10
+                #     else:
+                #         _gamma = min(config.GAMMA, 10 + (epoch - 200) * (config.GAMMA - 10) / 300)
+                # if k == 0 and it == config.INNER_ITERATIONS - 1:
+                #     wandb.log({"gamma" : _gamma}, step=epoch)
+                loss_k = config.LAMBDAS[k]*(cost_k - potential_k - _gamma*kreg)
+                
+             
+                loss_inner +=  loss_k
+                if it == config.INNER_ITERATIONS - 1:
+                    wandb.log({f"inner_{k}_loss":loss_k.item()},
+                              step=epoch)
+                
+              
+            loss_inner.backward()
+            maps_opt.step()
+          
+        wandb.log({f"inner_loss": loss_inner.item()},
+                  step=epoch)
+        
+        ######################
+        ### outer problem ####
+        ######################
+
+        for k in range(config.K):
+            freeze(maps[k])
+            if k < len(nets_for_pot):
+                unfreeze(nets_for_pot[k])
+        
+        
+        loss_outer = 0
+        nets_for_pot_opt.zero_grad()
+        data = [data_samplers[k].sample(config.BATCH_SIZE).to(config.DEVICE)
+                    for k in range(config.K)]
+        
+        for k in range(config.K):
+
+
+            ###########
+            # mapping 
+            
+            with torch.no_grad():
+                
+                Z_cond_k = config.Z_STD * torch.randn(data[k].shape[0],
+                                config.RESNET_ENCODER_LATENT,
+                                config.ZC,
+                                config.IMG_SIZE,
+                                config.IMG_SIZE).to(config.DEVICE) #[B,4,1,64,64] 
+                assert Z_cond_k.requires_grad == False
+
+                XZ = torch.cat([ data[k][:,None].repeat(1,config.RESNET_ENCODER_LATENT,1,1,1) #[b,4,3,64,64]
+                    , Z_cond_k], dim=2) # [B,4,4,64,64]
+                XZ = XZ.flatten(start_dim=0, end_dim=1) # [B*4,4,64,64]
+                assert XZ.requires_grad == False
+                assert XZ.shape == torch.Size([data[k].shape[0]*config.RESNET_ENCODER_LATENT,
+                                              config.ZC + config.NC,
+                                              config.IMG_SIZE,config.IMG_SIZE])
+
+                mapped_x_k = normalize_out_to_0_1(maps[k](XZ), config)
+                assert mapped_x_k.shape == torch.Size([
+                    data[k].shape[0]*config.RESNET_ENCODER_LATENT,
+                    config.NC,
+                    config.IMG_SIZE,
+                    config.IMG_SIZE])
+
+            ######################
+            # potentials cost
+            
+            potential_k = potentials[k](mapped_x_k) # [B*4, 1]
+            # checking #
+            assert potential_k.requires_grad == True
+            assert potential_k.shape == torch.Size([
+                data[k].shape[0]*config.RESNET_ENCODER_LATENT,
+                1])
+            
+            potential_k = potential_k.mean()
+
+            assert potential_k.requires_grad == True
+            assert potential_k.shape == torch.Size([])
+            loss_outer +=  potential_k
+ 
+        loss_outer.backward()
+        nets_for_pot_opt.step()
+
+        wandb.log({f"outer_loss": loss_inner.item()},
+                  step=epoch)
+        
+        ##############
+        ## plotting ##
+        ##############
+        
+        if epoch % 100 == 0:
+            for k in range(len(nets_for_pot)):
+                freeze(nets_for_pot[k])
+            
+            with torch.no_grad():
+
+                data = [data_samplers[k].sample(config.BATCH_SIZE).to(config.DEVICE)
+                        for k in range(config.K)]
+
+                maps_res = []
+                for k in range(config.K):
+
+                    Z_cond_k = config.Z_STD * torch.randn(data[k].shape[0],
+                                    config.RESNET_ENCODER_LATENT,
+                                    config.ZC,
+                                    config.IMG_SIZE,
+                                    config.IMG_SIZE).to(config.DEVICE) #[B,4,1,64,64] 
+    
+                    XZ = torch.cat([ data[k][:,None].repeat(1,config.RESNET_ENCODER_LATENT,1,1,1) #[b,4,3,64,64]
+                        , Z_cond_k], dim=2) # [B,4,4,64,64]
+                    XZ = XZ.flatten(start_dim=0, end_dim=1) # [B*4,4,64,64]
+                    mapped_x_k = normalize_out_to_0_1(maps[k](XZ), config).view(
+                        data[k].shape[0],
+                        config.RESNET_ENCODER_LATENT,
+                        config.NC,
+                        config.IMG_SIZE,
+                        config.IMG_SIZE)
+
+                    maps_res.append(mapped_x_k)
+
+                if config.DATASET != 'mnist':
+                    fig,ax = plt.subplots(9,8,figsize=(8,9),dpi=200)
+
+                    for i,k in zip([0,3,6],[0,1,2]):
+                        for j in range(8):
+                            ax[i,j].imshow(data[k][:8][j].permute(1,2,0).cpu(), cmap = 'gray' if config.DATASET == 'mnist' else None)
+
+                    for j in range(8):
+                        for i in range(9):
+                            ax[i,j].set_xticks([])
+                            ax[i,j].set_yticks([])
+
+                    for k,idx in zip(range(config.K),
+                                     [(1,2),(4,5),(7,8)]):
+                        for j in range(8):
+                            ax[idx[0],j].imshow(maps_res[k][:8][j][0].permute(1,2,0).detach().cpu(),
+                                               cmap = 'gray' if config.DATASET == 'mnist' else None)
+                            ax[idx[1],j].imshow(maps_res[k][:8][j][1].permute(1,2,0).detach().cpu(),
+                                               cmap = 'gray' if config.DATASET == 'mnist' else None)
+
+                else:
+                    fig,ax = plt.subplots(6,8,figsize=(8,6),dpi=200)
+                    
+                    for i,k in zip([0,3],[0,1]):
+                        for j in range(8):
+                            ax[i,j].imshow(data[k][:8][j].permute(1,2,0).cpu(), cmap = 'gray' if config.DATASET == 'mnist' else None)
+                    for j in range(8):
+                        for i in range(6):
+                            ax[i,j].set_xticks([])
+                            ax[i,j].set_yticks([])
+                            
+                    for k,idx in zip(range(config.K),
+                                     [(1,2),(4,5)]):
+                        for j in range(8):
+                            ax[idx[0],j].imshow(maps_res[k][:8][j][0].permute(1,2,0).detach().cpu(),
+                                               cmap = 'gray' if config.DATASET == 'mnist' else None)
+                            ax[idx[1],j].imshow(maps_res[k][:8][j][1].permute(1,2,0).detach().cpu(),
                                                cmap = 'gray' if config.DATASET == 'mnist' else None)
                             
                 fig.tight_layout(pad=0.01)

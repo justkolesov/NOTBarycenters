@@ -22,18 +22,18 @@ All the experiments are issued in the form of pretty self-explanatory jupyter no
  
 ### 2-Dimensional estimating barycenters
 
-- `stylegan2/notebooks/twister2D.ipynb` -- toy experiments on 2D Twister dataset.
+- `stylegan2/notebooks/twister2D.ipynb` -- toy experiments on 2D Twister dataset;
 - `stylegan2/notebooks/Gauss2D.ipynb` -- evaluating metrics of our method in Gaussian case.
 
 <p align="center"><img src="pics/twister.png" width="700" /></p>
 
 ### High-Dimensional estimating barycenters of Ave,Celeba! dataset
 
-- `notebooks/AVE_CELEBA_L2.ipynb` -- estimating barycenters of **Ave,Celeba** dataset in Image space ;
-- `notebooks/AVE_CELEBA_LATENT.ipynb` --  estimating barycenters in latent space with classical cost;
-- `notebooks/AVE_CELEBA_ENTROPY.ipynb` -- estimating barycenters in latent space with $\epsilon$-KL cost ;
-- `notebooks/AVE_CELEBA_KERNEL.ipynb` --  estimating barycenters in latent space with $\gamma$-Energy cost;
-- `notebooks/AVE_CELEBA_KERNEL_GAUSS.ipynb` -- estimating barycenters in latent space with $\gamma$-Energy cost(Gaussian reparam.);
+- `stylegan2/notebooks/AVE_CELEBA_L2.ipynb` -- estimating barycenters of **Ave,Celeba** dataset in Image space ;
+- `stylegan2/notebooks/AVE_CELEBA_LATENT.ipynb` --  estimating barycenters in latent space with classical cost;
+- `stylegan2/notebooks/AVE_CELEBA_ENTROPY.ipynb` -- estimating barycenters in latent space with $\epsilon$-KL cost ;
+- `stylegan2/notebooks/AVE_CELEBA_KERNEL.ipynb` --  estimating barycenters in latent space with $\gamma$-Energy cost;
+- `stylegan2/notebooks/AVE_CELEBA_KERNEL_GAUSS.ipynb` -- estimating barycenters in latent space with $\gamma$-Energy cost(Gaussian reparam.).
 
 <p  align="center">
   <img src= "pics/ave_0.png" width="260" />
@@ -43,11 +43,20 @@ All the experiments are issued in the form of pretty self-explanatory jupyter no
 
 ### High-Dimensional estimating barycenters of Colored MNIST dataset
 
-- `notebooks/SHAPE_COLOR_EXPERIMENT_ENTROPIC.ipynb` -- estimating barycenters in latent space with $\epsilon$-KL cost;
+- `stylegan2/notebooks/SHAPE_COLOR_EXPERIMENT_ENTROPIC.ipynb` -- estimating barycenters in latent space with $\epsilon$-KL cost.
 
 <p  align="center">
   <img src= "pics/shape_shape_1.png" width="340" />
   <img src="pics/color_color_1.png" width="340" /> 
+</p>
+
+### Estimating barycenters of MNIST dataset, digits 0 and 1
+
+- `stylegan2/notebooks/MNIST_01_L2_DATA.ipynb` -- estimating barycenters in **data** space (L2 cost);
+- `stylegan2/notebooks/MNIST_01_KERNEL_DATA.ipynb` -- estimating barycenters in **data** space with $\gamma$-Energy cost.
+
+<p  align="center">
+  <img src= "pics/mnist_01_data_energyreg.png" width="230" />
 </p>
 
 
