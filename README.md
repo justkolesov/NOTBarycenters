@@ -1,10 +1,25 @@
 # Estimating Barycenters of Distributions with Neural Optimal Transport
  
-This is the official `Python` implementation of the [ICML 2024](https://icml.cc/virtual/2024/poster/32654) paper **Estimating Barycenters of Distributions with Neural Optimal Transport** by [Alexander Kolesov](https://scholar.google.com/citations?user=vX2pmScAAAAJ&hl=ru&oi=ao), [Petr Mokrov](https://scholar.google.com/citations?user=CRsi4IkAAAAJ&hl=ru&oi=sra), [Igor Udovichenko](https://scholar.google.com/citations?hl=ru&user=IkcYVhXfeQcC), [Milena Gazdieva](https://scholar.google.com/citations?user=h52_Zx8AAAAJ&hl=ru&oi=sra), [Gudmund Pammer](https://scholar.google.com/citations?user=ipItetYAAAAJ&hl=ru&oi=sra), [Evgeny Burnaev](https://scholar.google.ru/citations?user=pCRdcOwAAAAJ&hl=ru) and [Alexander Korotin](https://scholar.google.com/citations?user=1rIIvjAAAAAJ&hl=ru&oi=sra).
+This is the official `Python` implementation of the [ICML 2024](https://icml.cc/virtual/2024/poster/32654) paper **Estimating Barycenters of Distributions with Neural Optimal Transport** by [Alexander Kolesov](https://scholar.google.com/citations?user=WyAI_wUAAAAJ), [Petr Mokrov](https://scholar.google.com/citations?user=CRsi4IkAAAAJ), [Igor Udovichenko](https://scholar.google.com/citations?user=IkcYVhXfeQcC), [Milena Gazdieva](https://scholar.google.com/citations?user=h52_Zx8AAAAJ), [Gudmund Pammer](https://scholar.google.com/citations?user=ipItetYAAAAJ), [Evgeny Burnaev](https://scholar.google.ru/citations?user=pCRdcOwAAAAJ) and [Alexander Korotin](https://scholar.google.com/citations?user=1rIIvjAAAAAJ).
 
 <p  align="center">
   <img src= "pics/maxminbary_teaser.png" width="700" />
 </p>
+
+## Citation
+
+If you find this repository or the ideas presented in our paper useful, please consider citing our paper.
+
+```
+@inproceedings{
+    kolesov2024estimating,
+    title={Estimating Barycenters of Distributions with Neural Optimal Transport},
+    author={Alexander Kolesov and Petr Mokrov and Igor Udovichenko and Milena Gazdieva and Gudmund Pammer and Evgeny Burnaev and Alexander Korotin},
+    booktitle={Forty-first International Conference on Machine Learning},
+    year={2024},
+    url={https://openreview.net/forum?id=ymgcTqrZLT}
+}
+```
 
 ## Pre-requisites
 The implementation is GPU-based. Single GPU GTX 1080 ti is enough to run each particular experiment. We tested the code with `torch==2.1.1+cu121`. The code might not run as intended in older/newer `torch` versions. Versions of other libraries are specified in `requirements.txt`. Pre-trained models for maps and potentials are located [here](https://disk.yandex.ru/d/GAhMTWmB4KEVmA).
